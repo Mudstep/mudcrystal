@@ -135,6 +135,10 @@ PlayBattleMusic:
 
 .johtotrainer
 	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr nz, .done
+	ld de, MUSIC_JOHTO_TRAINER_BATTLE_NIGHT
 	jr .done
 
 .kantotrainer

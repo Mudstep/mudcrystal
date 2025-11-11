@@ -104,6 +104,9 @@ INCLUDE "audio/music/johtowildbattlenight.asm"
 assert BANK(Music_JohtoWildBattle) == BANK(Music_JohtoWildBattleNight)
 
 INCLUDE "audio/music/johtotrainerbattle.asm"
+INCLUDE "audio/music/johtotrainerbattlenight.asm" ; added in MudCrystal
+assert BANK(Music_JohtoTrainerBattle) == BANK(Music_JohtoTrainerBattleNight) ; added in MudCrystal
+
 INCLUDE "audio/music/lookyoungster.asm"
 INCLUDE "audio/music/tintower.asm"
 INCLUDE "audio/music/sprouttower.asm"
@@ -165,3 +168,11 @@ SECTION "Cries", ROMX
 INCLUDE "data/pokemon/cries.asm"
 
 INCLUDE "audio/cries.asm"
+
+
+SECTION "MudCrystal Songs", ROMX
+
+INCLUDE "audio/music/mudcrystal/ceruleancity.asm"
+INCLUDE "audio/music/mudcrystal/cinnabarisland.asm"
+INCLUDE "audio/music/mudcrystal/route25.asm"
+INCLUDE "audio/music/mudcrystal/mart.asm"

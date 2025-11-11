@@ -34,6 +34,28 @@ NPCTrade::
 	ld b, SET_FLAG
 	call TradeFlagAction
 
+; Handles Zubat -> Bulbasaur trade event in CeruleanTradeSpeechHouse
+	ld a, [wJumptableIndex]
+	cp NPC_TRADE_BULBASAUR
+	jr nz, .skip_extra_flags
+
+	ld b, RESET_FLAG
+	ld de, EVENT_HIDE_TRADE_ZUBAT
+	call EventFlagAction
+
+	ld b, SET_FLAG
+	ld de, EVENT_HIDE_TRADE_BULBASAUR
+	call EventFlagAction
+
+	ld a, 5	; Zubat obj index
+	call DeleteObjectStruct
+	ld a, 4 ; Bulbasaur obj index
+	call UnmaskCopyMapObjectStruct
+
+	call UpdateSprites
+
+; Continues vanilla trade code
+.skip_extra_flags
 	ld hl, NPCTradeCableText
 	call PrintText
 

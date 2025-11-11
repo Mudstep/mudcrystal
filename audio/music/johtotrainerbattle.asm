@@ -10,6 +10,7 @@ Music_JohtoTrainerBattle_Ch1:
 	duty_cycle 3
 	pitch_offset 2
 	vibrato 18, 1, 5
+.body:
 	note_type 12, 9, 2
 	rest 8
 	octave 3
@@ -494,6 +495,7 @@ Music_JohtoTrainerBattle_Ch2:
 	note A#, 1
 	note A_, 1
 	note A#, 1
+.body:
 	volume_envelope 12, 2
 	octave 4
 	note A_, 6
@@ -901,6 +903,7 @@ Music_JohtoTrainerBattle_Ch2:
 
 Music_JohtoTrainerBattle_Ch3:
 	note_type 12, 1, 9
+.body:
 	octave 4
 	note E_, 1
 	note D#, 1

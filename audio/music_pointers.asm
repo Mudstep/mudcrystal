@@ -107,4 +107,10 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+; mudcrystal
+	dba Music_JohtoTrainerBattleNight
+	dba Music_CeruleanCity
+	dba Music_CinnabarIsland
+	dba Music_Route25
+	dba Music_Mart
 	assert_table_length NUM_MUSIC_SONGS

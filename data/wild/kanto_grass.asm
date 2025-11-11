@@ -343,7 +343,7 @@ KantoGrassWildMons:
 	; morn
 	db 17, RATTATA
 	db 17, SPEAROW
-	db 18, SNUBBULL
+	db 18, VULPIX
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
 	db 16, ABRA
@@ -351,19 +351,19 @@ KantoGrassWildMons:
 	; day
 	db 17, RATTATA
 	db 17, SPEAROW
-	db 18, SNUBBULL
+	db 18, VULPIX
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
-	db 16, ABRA
-	db 16, ABRA
+	db 16, VULPIX
+	db 16, VULPIX
 	; nite
 	db 17, MEOWTH
 	db 17, MURKROW
 	db 18, HOUNDOUR
 	db 18, PERSIAN
 	db 18, JIGGLYPUFF
-	db 16, ABRA
-	db 16, ABRA
+	db 16, VULPIX
+	db 16, VULPIX
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_8
@@ -400,26 +400,26 @@ KantoGrassWildMons:
 	db 15, RATTATA
 	db 15, SPEAROW
 	db 15, RATICATE
+	db 15, MANKEY
 	db 15, FEAROW
-	db 15, FEAROW
-	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, PRIMEAPE
+	db 18, PRIMEAPE
 	; day
 	db 15, RATTATA
 	db 15, SPEAROW
 	db 15, RATICATE
+	db 15, MANKEY
 	db 15, FEAROW
-	db 15, FEAROW
-	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, PRIMEAPE
+	db 18, PRIMEAPE
 	; nite
 	db 15, RATTATA
 	db 15, VENONAT
 	db 15, RATICATE
 	db 15, VENOMOTH
-	db 15, ZUBAT
-	db 18, RATICATE
-	db 18, RATICATE
+	db 15, MANKEY
+	db 18, PRIMEAPE
+	db 18, PRIMEAPE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_10_NORTH

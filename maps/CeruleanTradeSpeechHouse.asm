@@ -3,6 +3,7 @@
 	const CERULEANTRADESPEECHHOUSE_GRAMPS
 	const CERULEANTRADESPEECHHOUSE_RHYDON
 	const CERULEANTRADESPEECHHOUSE_ZUBAT
+	const CERULEANTRADESPEECHHOUSE_BULBASAUR
 
 CeruleanTradeSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -13,7 +14,12 @@ CeruleanTradeSpeechHouseGrannyScript:
 	jumptextfaceplayer CeruleanTradeSpeechHouseGrannyText
 
 CeruleanTradeSpeechHouseGrampsScript:
-	jumptextfaceplayer CeruleanTradeSpeechHouseGrampsText
+	faceplayer
+	opentext
+	trade NPC_TRADE_BULBASAUR
+	waitbutton
+	closetext
+	end
 
 CeruleanTradeSpeechHouseRhydonScript:
 	opentext
@@ -27,6 +33,14 @@ CeruleanTradeSpeechHouseZubatScript:
 	opentext
 	writetext CeruleanTradeSpeechHouseZubatText
 	cry ZUBAT
+	waitbutton
+	closetext
+	end
+
+CeruleanTradeSpeechHouseBulbasaurScript:
+	opentext
+	writetext CeruleanTradeSpeechHouseBulbasaurText
+	cry BULBASAUR
 	waitbutton
 	closetext
 	end
@@ -51,6 +65,11 @@ CeruleanTradeSpeechHouseZubatText:
 	text "ZUBAT: Zuba zubaa."
 	done
 
+CeruleanTradeSpeechHouseBulbasaurText:
+	text "BULBASAUR: Bubba!"
+	line "Zoar!"
+	done
+
 CeruleanTradeSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -66,4 +85,5 @@ CeruleanTradeSpeechHouse_MapEvents:
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrampsScript, -1
 	object_event  5,  2, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseRhydonScript, -1
-	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1
+	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, EVENT_HIDE_TRADE_ZUBAT
+	object_event  5,  6, SPRITE_BULBASAUR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseBulbasaurScript, EVENT_HIDE_TRADE_BULBASAUR

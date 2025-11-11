@@ -1321,17 +1321,17 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, EKANS
+	db 4, BELLSPROUT
 	db 5, RATTATA
-	db 7, BELLSPROUT
+	db 7, MAREEP
 	db 6, HOPPIP
 	db 7, PIDGEY
 	db 7, HOPPIP
 	db 7, HOPPIP
 	; day
-	db 4, EKANS
+	db 4, BELLSPROUT
 	db 5, RATTATA
-	db 7, BELLSPROUT
+	db 7, MAREEP
 	db 6, HOPPIP
 	db 7, PIDGEY
 	db 7, HOPPIP
@@ -1339,8 +1339,8 @@ JohtoGrassWildMons:
 	; nite
 	db 4, WOOPER
 	db 5, RATTATA
-	db 7, BELLSPROUT
-	db 6, ZUBAT
+	db 7, EKANS
+	db 6, MAREEP
 	db 7, HOOTHOOT
 	db 7, GASTLY
 	db 7, GASTLY
@@ -1462,17 +1462,17 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, LEDYBA
-	db 14, GROWLITHE
+	db 14, VULPIX
 	db 15, PIDGEY
-	db 16, GROWLITHE
+	db 16, STANTLER
 	db 15, PIDGEOTTO
 	db 15, LEDIAN
 	db 15, LEDIAN
 	; day
 	db 13, PIDGEY
-	db 14, GROWLITHE
+	db 14, VULPIX
 	db 15, PIDGEY
-	db 16, GROWLITHE
+	db 16, STANTLER
 	db 15, PIDGEOTTO
 	db 15, PIDGEY
 	db 15, PIDGEY
@@ -1545,26 +1545,26 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, EKANS
-	db 14, SPEAROW
-	db 15, RATTATA
-	db 16, RATICATE
-	db 15, ARBOK
+	db 13, MAREEP
+	db 14, MANKEY
+	db 15, SPEAROW
+	db 16, FLAAFFY
+	db 15, EKANS
 	db 16, FEAROW
 	db 16, FEAROW
 	; day
-	db 13, EKANS
-	db 14, SPEAROW
-	db 15, RATTATA
-	db 16, RATICATE
-	db 15, ARBOK
+	db 13, MAREEP
+	db 14, MANKEY
+	db 15, SPEAROW
+	db 16, FLAAFFY
+	db 15, EKANS
 	db 16, FEAROW
 	db 16, FEAROW
 	; nite
-	db 13, RATTATA
-	db 14, ZUBAT
-	db 15, RATICATE
-	db 16, GOLBAT
+	db 13, MAREEP
+	db 14, MANKEY
+	db 15, ZUBAT
+	db 16, FLAAFFY
 	db 15, MARILL
 	db 16, GOLBAT
 	db 16, GOLBAT
@@ -1573,27 +1573,27 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, SENTRET
-	db 16, PIDGEOTTO
+	db 15, FLAAFFY
+	db 16, GIRAFARIG
 	db 16, FARFETCH_D
-	db 15, FURRET
-	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
-	; day
-	db 15, SENTRET
-	db 16, PIDGEOTTO
-	db 16, FARFETCH_D
-	db 15, FURRET
-	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
-	; nite
-	db 15, VENONAT
-	db 16, NOCTOWL
-	db 16, RATICATE
+	db 15, PIDGEOTTO
+	db 17, PIDGEOTTO
 	db 17, VENONAT
-	db 17, RATICATE
+	db 17, VENONAT
+	; day
+	db 15, FLAAFFY
+	db 16, GIRAFARIG
+	db 16, FARFETCH_D
+	db 15, FLAAFFY
+	db 17, PIDGEOTTO
+	db 17, MAREEP
+	db 17, MAREEP
+	; nite
+	db 15, FLAAFFY
+	db 16, GIRAFARIG
+	db 16, NOCTOWL
+	db 17, VENONAT
+	db 17, MAREEP
 	db 17, VENOMOTH
 	db 17, VENOMOTH
 	end_grass_wildmons

@@ -117,16 +117,15 @@ FishGroups:
 .Remoraid_Swarm_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     REMORAID,   10
+	db 100 percent,     POLIWAG,    10
 .Remoraid_Swarm_Good:
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     REMORAID,   20
-	db  90 percent + 1, REMORAID,   20
-	db 100 percent,     time_group 12
+	db  70 percent,     POLIWAG,    20
+	db  90 percent + 1, POLIWAG,    20
+	db 100 percent,     time_group 6
 .Remoraid_Swarm_Super:
-	db  40 percent,     REMORAID,   40
-	db  70 percent,     time_group 13
-	db  90 percent + 1, REMORAID,   40
+	db  70 percent,     POLIWAG,    40
+	db  90 percent + 1, MAGIKARP,   40
 	db 100 percent,     REMORAID,   40
 
 .Gyarados_Old:

@@ -10,6 +10,7 @@
 	const ROUTE25_SUPER_NERD
 	const ROUTE25_COOLTRAINER_M2
 	const ROUTE25_POKE_BALL
+	const ROUTE_25_CHARMANDER_GIFT
 
 Route25_MapScripts:
 	def_scene_scripts
@@ -427,6 +428,84 @@ UnusedBillsHouseSignText: ; unreferenced
 	text "BILL'S HOUSE"
 	done
 
+
+Route25CharmanderGift:
+	faceplayer
+	opentext
+
+	checkevent EVENT_GOT_CHARMANDER
+	iftrue .gotCharmander
+
+	writetext Route25CharmanderGiftText
+	yesorno
+	iftrue .giveCharmander
+
+	writetext Route25CharmanderGiftText_Refused
+	waitbutton
+	closetext
+	end
+.giveCharmander:
+	setevent EVENT_GOT_CHARMANDER
+	getmonname STRING_BUFFER_3, CHARMANDER
+	writetext ReceivedCharmanderText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke CHARMANDER, 5, BERRY
+	writetext Route25CharmanderGiftText_Obtained
+	waitbutton
+	closetext
+	end
+.gotCharmander:
+	writetext Route25CharmanderGiftText_Obtained
+	waitbutton
+	closetext
+	end
+
+Route25CharmanderGiftText:
+	text "I'm not good at"
+	line "raising #MON."
+
+	para "Three years ago,"
+	line "I almost released"
+	cont "my CHARMANDER…"
+
+	para "A strong TRAINER"
+	line "around your age"
+	cont "kindly took it off"
+	cont "my hands, though!"
+
+	para "I never thought"
+	line "that I'd end up"
+	cont "with yet another"
+	cont "CHARMANDER, but"
+	cont "here we are!"
+
+	para "If you promise me"
+	line "you'll care for"
+	cont "it, it's yours."
+	done
+
+Route25CharmanderGiftText_Refused:
+	text "Oh, okay."
+
+	para "Just let me know"
+	line "if you change"
+	cont "your mind."
+	done
+
+Route25CharmanderGiftText_Obtained:
+	text "CHARMANDER seems"
+	line "much happier now!"
+	done
+
+ReceivedCharmanderText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
 Route25_MapEvents:
 	db 0, 0 ; filler
 
@@ -453,3 +532,4 @@ Route25_MapEvents:
 	object_event 31,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSupernerdPat, -1
 	object_event 37,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainermKevin, -1
 	object_event 32,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Protein, EVENT_ROUTE_25_PROTEIN
+	object_event  5,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route25CharmanderGift, -1
