@@ -205,7 +205,6 @@ Music_CeruleanCity_Ch2:
 	vibrato 12, 3, 4
 	duty_cycle 2
 	note_type 2, 12, 2
-	pitch_offset 2
 	rest 2
 	note_type 12, 12, 2
 	octave 5
@@ -303,7 +302,6 @@ Music_CeruleanCity_Loop2:
 	note D#, 1
 	note E_, 1
 	rest 3
-	duty_cycle_pattern 0, 0, 2, 2
 	octave 4
 	note G#, 4
 	note E_, 4
@@ -315,7 +313,6 @@ Music_CeruleanCity_Loop2:
 	note E_, 1
 	note F#, 1
 	rest 3
-	duty_cycle_pattern 0, 0, 2, 2
 	octave 4
 	note B_, 4
 	note F#, 4
@@ -350,7 +347,6 @@ Music_CeruleanCity_Loop2:
 	note D#, 1
 	note F#, 1
 	note B_, 8
-	duty_cycle_pattern 0, 0, 2, 2
 	volume_envelope 12, 6
 	octave 4
 	note E_, 8

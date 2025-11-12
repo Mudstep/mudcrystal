@@ -61,6 +61,30 @@ CheckBadge:
 	text_far _BadgeRequiredText
 	text_end
 
+INCLUDE "data/moves/field_moves.asm"
+
+CheckFieldReplacementMove:
+; Check if a monster in your party has any move in the array at hl.
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .no_move
+
+	ld d, a
+	push hl
+	call CheckPartyMove
+	pop hl
+
+	jr c, .loop
+
+	scf
+	ld a, d
+	ret
+
+.no_move
+	xor a
+	ret
+
 CheckPartyMove:
 ; Check if a monster in your party has move d.
 
@@ -1054,9 +1078,18 @@ BouldersMayMoveText:
 	text_end
 
 TryStrengthOW:
-	ld d, STRENGTH
-	call CheckPartyMove
-	jr c, .nope
+	ld a, HM_STRENGTH
+	ld [wCurItem],a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .nope
+
+	; ld d, STRENGTH
+	; call CheckPartyMove
+	;jr c, .nope
+	ld hl, StrengthReplacementMoves
+	call CheckFieldReplacementMove
+	jr nc, .nope
 
 	ld de, ENGINE_PLAINBADGE
 	call CheckEngineFlag
@@ -1407,9 +1440,9 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
-	ld d, ROCK_SMASH
-	call CheckPartyMove
-	jr nc, .yes
+	ld hl, RockSmashReplacementMoves
+	call CheckFieldReplacementMove
+	jr c, .yes
 ; no
 	ld a, 1
 	jr .done
@@ -1759,9 +1792,17 @@ GotOffBikeText:
 	text_end
 
 TryCutOW::
-	ld d, CUT
-	call CheckPartyMove
-	jr c, .cant_cut
+	ld a, HM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .cant_cut
+
+	; ld d, CUT
+	; call CheckPartyMove
+	ld hl, CutReplacementMoves
+	call CheckFieldReplacementMove
+	jr nc, .cant_cut
 
 	ld de, ENGINE_HIVEBADGE
 	call CheckEngineFlag
